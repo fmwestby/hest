@@ -1,0 +1,31 @@
+% hest.sty -- robust single-file package that reads external hest.txt
+% Version 1.6a: add configurable vertical spacing and centering
+\ProvidesPackage{hest}[2026/01/12 v1.0 Read external ASCII art (with spacing)]
+
+\RequirePackage{fancyvrb}
+
+% file containing the ASCII art; change if you want a different name/path
+\newcommand{\hestfile}{hest.txt}
+
+% configurable vertical space before/after the art
+\newlength{\hestsep}
+\setlength{\hestsep}{0.1\baselineskip} % default gap; change as needed
+
+% main command: prints the art centered, with vertical gaps
+\DeclareRobustCommand{\hest}{%
+  \par
+  \vspace{\hestsep}% space above
+  \begin{center}%
+    \begin{minipage}{0.6\linewidth}%
+      \ttfamily
+      \VerbatimInput{\hestfile}%
+    \end{minipage}%
+  \end{center}%
+  \vspace{\hestsep}% space below
+  \par
+}
+
+% environment version
+\newenvironment{hestenv}{\par\hest\par}{}
+
+\endinput
