@@ -1,4 +1,4 @@
-# HestTeX
+# hest
 
 This is the only horse LaTeX package you will ever need! 
 
