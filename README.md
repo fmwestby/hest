@@ -11,6 +11,7 @@ Usage:
 \begin{document}
 \hest
 \end{document}
+```
 
 Output:
 ```ascii
@@ -20,3 +21,4 @@ Output:
 '/ )\ ).__. ) 
 ' <' `\ ._/'\
    `   \     \
+```
